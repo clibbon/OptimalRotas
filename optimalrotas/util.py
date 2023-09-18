@@ -3,7 +3,7 @@ from random import randint, choices
 from .data_types import Role, Project
 
 DAYS_PER_WEEK = 7
-ROLES = [role for role in Role]  # Annoying Enum thing
+ROLES = list(Role)  # Annoying Enum thing
 
 
 def create_random_project(
@@ -34,3 +34,7 @@ def create_random_project(
     staff = choices(ROLES, k=random_n_staff)
 
     return Project(random_start_date, end_date, staff)
+
+
+
+
